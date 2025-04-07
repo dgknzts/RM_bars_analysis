@@ -1,0 +1,9 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+datasets/Exp1A/one_bar/*.csv
+datasets/Exp1A/*.csv
+datasets/Exp1B/*.csv
+datasets/Exp1C/*.csv
+figures/
