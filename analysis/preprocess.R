@@ -22,13 +22,14 @@ for (project in project_info) {
   raw_dfs <- list()
   
   # List all files in the directory with the control pattern
-  files <- list.files(pattern = "^[0-9]+_exp1_.*\\.csv$")
+  files <- list.files(path = project_dir, pattern = "^[0-9]+_exp1_.*\\.csv$")
   
   # Load data files
   for (i in seq_along(files)) {
     file_name <- files[i]
+    full_file_path <- file.path(project_dir, file_name)
     # Read the CSV file and store it in the list
-    raw_dfs[[i]] <- read.csv(file_name, header = TRUE)
+    raw_dfs[[i]] <- read.csv(full_file_path, header = TRUE)
     # Assign names to each data frame in the list for easier access
     names(raw_dfs)[i] <- file_name
   }
